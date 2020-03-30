@@ -1,1 +1,15 @@
 <p>track-list works!</p>
+<table>
+  <div *ngFor="let track of trackListData.tracks">
+    <tr>
+      <th>{{track.name}}</th>
+      <th>{{track.author}}</th>
+      <th>
+        <button (click)="removeTrack(track)">
+          Delete
+        </button>
+      </th>
+    </tr>
+  </div>
+</table>
+
