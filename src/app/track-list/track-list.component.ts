@@ -17,7 +17,6 @@ export class TrackListComponent implements OnInit {
   constructor(private ngRedux: NgRedux<AppState>, private trackListActions: TrackListActions) { }
 
   ngOnInit(): void {
-    // @ts-ignore
     this.trackListData$.subscribe((trackListData: TrackListData) => {
       this.trackListData = trackListData;
     });

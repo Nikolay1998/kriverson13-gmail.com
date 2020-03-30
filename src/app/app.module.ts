@@ -13,18 +13,17 @@ import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    GenreListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     TrackListModule,
     StateModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {path: 'tracks', component: TrackListComponent},
-      {path: 'genres', component: GenreListComponent},
-    ])
+    // RouterModule.forRoot([
+    //  {path: 'tracks', component: TrackListComponent},
+    //  {path: 'genres', component: GenreListComponent},
+    // ])
   ],
   providers: [TrackListEpicFactory, TrackListActions],
   bootstrap: [AppComponent]

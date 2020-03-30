@@ -4,6 +4,9 @@ import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [TrackListComponent],
+  exports: [
+    TrackListComponent
+  ],
   imports: [
     CommonModule
   ]

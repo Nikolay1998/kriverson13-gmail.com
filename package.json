@@ -4,6 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "local": "ng serve --aot -o --proxy-config local-server.conf.json",
+    "server": "tsc-watch ./server/server.ts --outDir ./server/dist --onSuccess \"node ./server/dist/server.js\" --onFailure \"echo Beep! Compilation Failed\" --compiler typescript/bin/tsc",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -46,6 +48,10 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "concurrently": "5.0.0",
+    "tsc-watch": "3.0.2",
+    "@types/express": "4.17.1",
+    "express": "4.17.1"
   }
 }
