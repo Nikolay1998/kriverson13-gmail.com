@@ -11,7 +11,7 @@ import {TrackListActions} from './track-list.action';
   styleUrls: ['./track-list.component.css']
 })
 export class TrackListComponent implements OnInit {
-  @select(['trackListState', 'trackListData']) readonly trackListData$: Observable<Track>;
+  @select(['trackListState', 'trackListData']) readonly trackListData$: Observable<TrackListData>;
   trackListData: TrackListData;
 
   constructor(private ngRedux: NgRedux<AppState>, private trackListActions: TrackListActions) { }

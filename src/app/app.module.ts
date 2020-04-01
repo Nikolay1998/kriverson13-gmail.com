@@ -20,10 +20,6 @@ import {HttpClientModule} from '@angular/common/http';
     TrackListModule,
     StateModule,
     HttpClientModule,
-    // RouterModule.forRoot([
-    //  {path: 'tracks', component: TrackListComponent},
-    //  {path: 'genres', component: GenreListComponent},
-    // ])
   ],
   providers: [TrackListEpicFactory, TrackListActions],
   bootstrap: [AppComponent]
