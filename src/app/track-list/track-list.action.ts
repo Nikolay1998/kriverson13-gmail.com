@@ -3,7 +3,7 @@ import {Track} from './track-list.data';
 import {Action} from 'redux';
 
 @Injectable()
-export class TrackListActions{
+export class TrackListActions {
   static readonly ADD_TRACK: string = 'ADD_TRACK';
   static readonly REMOVE_TRACK: string = 'REMOVE_TRACK';
   static readonly LOAD_TRACKS: string = 'LOAD_TRACKS';
@@ -37,7 +37,7 @@ export interface RemoveTrackAction extends TrackListAction {
   track: Track;
 }
 
-export interface LoadTracksAction extends TrackListAction{
+export interface LoadTracksAction extends TrackListAction {
 }
 
 export interface SetLoadedTracksAction extends TrackListAction {
