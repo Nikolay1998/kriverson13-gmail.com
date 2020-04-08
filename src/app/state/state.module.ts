@@ -13,7 +13,7 @@ import {appReducer} from './app.reducer';
   ]
 })
 export class StateModule {
-  constructor(public ngRedux: NgRedux<AppState>, private sampleEpicFactory: TrackListEpicFactory) {
+  constructor(public ngRedux: NgRedux<AppState>, private trackEpicFactory: TrackListEpicFactory) {
     const epicMiddleware = createEpicMiddleware();
 
     const store = createStore(
@@ -24,7 +24,7 @@ export class StateModule {
 
     ngRedux.provideStore(store);
     epicMiddleware.run(combineEpics(
-      this.sampleEpicFactory.createLoadTracksEpic()
+      this.trackEpicFactory.createLoadTracksEpic()
     ));
   }
 }

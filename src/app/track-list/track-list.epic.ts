@@ -9,20 +9,21 @@ import {Track} from './track-list.data';
 @Injectable()
 export class TrackListEpicFactory {
   constructor(private http: HttpClient,
-              private trackListActions: TrackListActions) {}
+              private trackListActions: TrackListActions) {
+  }
 
-    createLoadTracksEpic(): Epic<Action, Action> {
-      return action$ => {
-        return action$.pipe(
-          ofType(TrackListActions.LOAD_TRACKS),
-          mergeMap(action =>
-            this.http.get('/tracks/all')
-              .pipe(map(loadedTracks => loadedTracks as Track[]))
-              .pipe(map(loadedTracks => {
-                  return this.trackListActions.setLoadedTracks(loadedTracks);
-              }))
-          )
-        );
-      };
-    }
+  createLoadTracksEpic(): Epic<Action, Action> {
+    return action$ => {
+      return action$.pipe(
+        ofType(TrackListActions.LOAD_TRACKS),
+        mergeMap(action =>
+          this.http.get('track-list/tracks/all')
+            .pipe(map(loadedTracks => loadedTracks as Track[]))
+            .pipe(map(loadedTracks => {
+              return this.trackListActions.setLoadedTracks(loadedTracks);
+            }))
+        )
+      );
+    };
+  }
 }

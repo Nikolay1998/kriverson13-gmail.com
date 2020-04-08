@@ -27,6 +27,7 @@ export class TrackListComponent implements OnInit {
   }
 
   addTrack(name: string, author: string) {
+    console.log('helo');
     this.ngRedux.dispatch(this.trackListActions.addTrack(new Track(name, author)));
   }
 
