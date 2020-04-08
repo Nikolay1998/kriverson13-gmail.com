@@ -1,7 +1,6 @@
 <p>track-list works!</p>
 <table>
-  <div *ngFor="let track of trackListData.tracks">
-    <tr>
+    <tr *ngFor="let track of trackListData.tracks">
       <th>{{track.name}}</th>
       <th>{{track.author}}</th>
       <th>
@@ -10,6 +9,8 @@
         </button>
       </th>
     </tr>
-  </div>
 </table>
+<button (click)="addTrack('addedTrack', 'addedTrackAuthor')">
+  Add
+</button>
 
