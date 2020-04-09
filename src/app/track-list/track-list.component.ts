@@ -20,14 +20,10 @@ export class TrackListComponent implements OnInit {
     this.trackListData$.subscribe((trackListData: TrackListData) => {
       this.trackListData = trackListData;
     });
-    // let firstTrack;
-    // firstTrack = new Track('name', 'author');
-    // this.trackListData.tracks[0] = (firstTrack);
     this.ngRedux.dispatch(this.trackListActions.loadTracks());
   }
 
   addTrack(name: string, author: string) {
-    console.log('helo');
     this.ngRedux.dispatch(this.trackListActions.addTrack(new Track(name, author)));
   }
 

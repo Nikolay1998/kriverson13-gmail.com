@@ -15,8 +15,8 @@ const allowCrossDomain = (req: Request, res: Response, next: NextFunction): void
 
 const routers = [
   {
-    url: 'track-list/tracks',
-    middleware: tracksRouterFactory()
+    url: 'server',
+    middleware: tracksRouterFactory(),
   }
 ];
 

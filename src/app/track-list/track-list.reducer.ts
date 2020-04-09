@@ -11,7 +11,7 @@ export function trackListReducer(state: TrackListState = INITIAL_STATE, action: 
     case TrackListActions.REMOVE_TRACK:
       return {
         trackListData: new TrackListData(
-          state.trackListData.tracks.filter(row => row !== (action as RemoveTrackAction).track)
+          state.trackListData.tracks.filter(track => track !== (action as RemoveTrackAction).track)
         )
       };
     case TrackListActions.SET_LOADED_TRACKS:

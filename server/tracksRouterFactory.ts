@@ -4,7 +4,7 @@ import { Router } from 'express';
 export const tracksRouterFactory = (): Router => {
   const router = express.Router();
 
-  router.get('/all', (req, res) => {
+  router.get('/tracks', (req, res) => {
     res.status(200).json([
       {
         name: 'Name 1',
@@ -13,6 +13,17 @@ export const tracksRouterFactory = (): Router => {
       {
         name: 'Name 2',
         author: 'Author 2'
+      }
+    ]);
+  });
+
+  router.get('/genres', (req, res) => {
+    res.status(200).json([
+      {
+        name: 'Genre 1',
+      },
+      {
+        name: 'Genre 2',
       }
     ]);
   });

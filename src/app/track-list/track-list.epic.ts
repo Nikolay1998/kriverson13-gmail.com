@@ -17,7 +17,7 @@ export class TrackListEpicFactory {
       return action$.pipe(
         ofType(TrackListActions.LOAD_TRACKS),
         mergeMap(action =>
-          this.http.get('track-list/tracks/all')
+          this.http.get('server/tracks')
             .pipe(map(loadedTracks => loadedTracks as Track[]))
             .pipe(map(loadedTracks => {
               return this.trackListActions.setLoadedTracks(loadedTracks);
