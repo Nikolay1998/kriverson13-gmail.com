@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { Router } from 'express';
 
-export const tracksRouterFactory = (): Router => {
+export const routerFactory = (): Router => {
   const router = express.Router();
 
   router.get('/tracks', (req, res) => {

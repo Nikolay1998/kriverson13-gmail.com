@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { NextFunction, Request, Response } from 'express-serve-static-core';
-import { tracksRouterFactory } from './tracksRouterFactory';
+import { routerFactory } from './routerFactory';
 
 const app = express();
 const port = process.env.NODEJS_PORT || 3000;
@@ -16,7 +16,7 @@ const allowCrossDomain = (req: Request, res: Response, next: NextFunction): void
 const routers = [
   {
     url: 'server',
-    middleware: tracksRouterFactory(),
+    middleware: routerFactory(),
   }
 ];
 
